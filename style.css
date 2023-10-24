@@ -28,7 +28,12 @@ nav ul li {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
+
+.project:hover{
+    background: rgba(203, 203, 203, 0.292); /* make this whatever you want */
+    }
 
 footer {
     text-align: center;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Your Name</title>
+    <title>Brady Wales</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,33 +24,76 @@
 
     <section id="projects" class="section">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>LSP</h3>
-            <p>Description of your first project. Add details, technologies used, and any results or lessons learned.</p>
+        <div class="project" data-href="LSP.html">
+            <h3>
+                <a>LSP</a>
+                <span class="icon">|  Golang: net</span>
+            </h3>
+            <p>Live Sequence Protocol, an internet protocol built on UDP to reliably transmit data between clients and servers.</p>
         </div>
-        <div class="project">
-            <h3>Facial Recognition</h3>
-            <p>Description of your second project. Include details and key information about the project's purpose and impact.</p>
+        <div class="project" data-href="Recognition.html">
+            <h3>
+                <a>Facial Recognition + Verification</a>
+                <span class="icon">|  Python</span>
+            </h3>
+            <p>Machine Learning Facial Recognition Model. Built using PyTorch, accurately recognizes and classifies a large set of faces.</p>
         </div>
-        <div class="project">
-            <h3>MyTorch</h3>
-            <p>Description of your third project. Add details, technologies used, and any results or lessons learned.</p>
+        <div class="project" data-href="MyTorch.html">
+            <h3>
+                <a>MyTorch</a>
+                <span class="icon">|  Python: Numpy, PyTorch</span>
+            </h3>
+            <p>A machine learning library, built using numpy to train and evaluate Machine Learning Models. Using only numpy to implement Recurrent and Convolutional Neural Networks.</p>
         </div>
-        <div class="project">
-            <h3>HomePage</h3>
-            <p>Description of your fourth project. Include details and key information about the project's purpose and impact.</p>
+        <div class="project" data-href="Malloc.html">
+            <h3>
+                <a>Malloc</a>
+                <span class="icon">|  C</span>
+            </h3>
+            <p>Low-level implementation of the C Malloc, Calloc, and Free functions.</p>
         </div>
-        <div class="project">
-            <h3>Malloc</h3>
-            <p>Description of your fourth project. Include details and key information about the project's purpose and impact.</p>
+        <div class="project" data-href="Tsh.html">
+            <h3>
+                <a>Tsh</a>
+                <span class="icon">|  C</span>
+            </h3>
+            <p>Tiny Shell, written in C to execute and handle commands and processes.</p>
         </div>
-        <div class="project">
-            <h3>Tsh</h3>
-            <p>Description of your fourth project. Include details and key information about the project's purpose and impact.</p>
+        <div class="project" data-href="HomePage.html">
+            <h3>
+                <a>HomePage</a>
+                <span class="icon">|  Python: Selenium, Tkinter</span>
+            </h3>
+            <p>Hackathon web-scraping project, gathers data from popular social media sites to generate a unified homepage containing all posts.</p>
+        </div>
+        <div class="project" data-href="Zomb112.html">
+            <h3>
+                <a>Zomb112</a>
+                <span class="icon">|  Python: Tkinter</span>
+            </h3>
+            <p>3D Wave based survival game, written in python without an existing 3D engine. Applies raycasting to create a 3D world.</p>
+        </div>
+        <div class="project" data-href="Tetris.html">
+            <h3>
+                <a>Tetris</a>
+                <span class="icon">|  Python: Tkinter</span>
+            </h3>
+            <p>Tetris written in Python, full graphical interface with user input.</p>
         </div>
     </section>
     <footer>
         <p>&copy; 2023 Brady Wales</p>
     </footer>
+    <script>
+        const projectDivs = document.querySelectorAll('.project');
+        projectDivs.forEach((div) => {
+            div.addEventListener('click', function () {
+                const href = div.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
