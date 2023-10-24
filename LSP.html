@@ -51,11 +51,11 @@
       const projectImages = document.querySelectorAll(".project-image img");
       projectImages.forEach((image) => {
         image.addEventListener("click", () => {
-          if (image.style.transform != "scale(1.35)") {
+          if (image.style.transform != "scale(1.5)") {
             document.getElementById("overlay").style.display = "block";
             image.style.top = "20%";
             image.style.left = "20%";
-            image.style.transform = "scale(1.35)";
+            image.style.transform = "scale(1.5)";
             image.style.zIndex = "2";
             image.style.cursor = "zoom-out";
             document.body.style.overflowY = "hidden";
