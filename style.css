@@ -42,10 +42,13 @@ nav ul li {
   background-color: white;
   top: 0;
   width: 100%;
+  margin-right: 20px;
+  z-index: 1;
 }
 
 hr {
   margin: 0;
+  margin-right: 20px;
 }
 
 .projectDesc {
@@ -81,7 +84,8 @@ a {
   text-decoration: none;
 }
 
-/* CSS for the project image */
+.project-info {
+}
 .project-image {
   text-align: center; /* Center the image horizontally */
   margin: 20px 0; /* Add some margin for spacing */
@@ -90,9 +94,12 @@ a {
 .project-image img {
   max-width: 60%; /* Ensure the image does not exceed the container width */
   max-height: 60%;
-  border: 2px solid #ccc; /* Add a border to the image */
   border-radius: 10px; /* Add rounded corners to the image */
+  transition: transform 0.07s;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+  z-index: 0;
+  position: sticky;
+  cursor: zoom-in;
 }
 
 .project-details {
@@ -100,4 +107,19 @@ a {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
+  z-index: 1;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  cursor: pointer; /* Add a pointer on hover */
+  z-index: 2;
 }
