@@ -1,6 +1,7 @@
 body {
   font-family: "Oxygen", sans-serif;
   padding-top: 70px;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -26,6 +27,10 @@ h3 {
   font-size: 20px;
 }
 
+h4 {
+  font-size: 16px;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -39,7 +44,7 @@ nav ul li {
 .navbar {
   overflow: hidden;
   position: fixed;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   top: 0;
   width: 100%;
   margin-right: 20px;
@@ -84,11 +89,16 @@ a {
   text-decoration: none;
 }
 
-.project-info {
-}
 .project-image {
   text-align: center; /* Center the image horizontally */
   margin: 20px 0; /* Add some margin for spacing */
+}
+
+video {
+  max-width: 60%;
+  max-height: 60%;
+  border-radius: 8px; /* Add rounded corners to the video */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
 }
 
 .project-image img {
@@ -122,4 +132,8 @@ a {
   background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
   cursor: pointer; /* Add a pointer on hover */
   z-index: 2;
+}
+
+li {
+  list-style-type: square;
 }
