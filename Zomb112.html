@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zomb112</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxygen"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1><a href="index.html">Brady Wales</a></h1>
+      <nav>
+        <ul>
+          <li><a href="mailto:bradywales@gmail.com">email</a></li>
+          <li><a href="https://github.com/bradywales">github</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/brady-wales">linkedin</a>
+          </li>
+          <li><a href="resume.pdf" target="_blank">resume</a></li>
+        </ul>
+      </nav>
+      <hr />
+    </div>
+    <section id="Zomb112" class="section">
+      <h2>Zomb112</h2>
+      <section class="project-info">
+        <div id="overlay"></div>
+        <div class="project-image">
+          <video controls>
+            <source src="assets/zomb112-final.mov" type="video/mp4" />
+          </video>
+          <!-- <img src="project-image.png" alt="Project Image" /> -->
+        </div>
+        <div class="project-details" id="details">
+          <h3>Written in Python, 1000+ lines of code, semester long term project for the course 15-112</h3>
+          <h4>
+            <b>Skills:</b>
+            <i>3D Graphics, Large Scale Application Development, Pathfinding<i>
+          </h4>
+          <p>
+            A 3D wave based survival game written in Python. 
+          </p>
+          <ul>
+            <li>
+              Without any existing 3D graphics library, I wrote a custom raycasting function to create the 3D environment.
+            </li>
+            <li>
+              Uses a pathfinding algorithm to allow the zombies to navigate the map.
+            </li>
+            <li>
+              The player earns points for every wave they survive, which they can use to buy upgrades.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Brady Wales</p>
+    </footer>
+    <script>
+      const projectImages = document.querySelectorAll(".project-image img");
+      projectImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          if (image.style.transform != "scale(1.5)") {
+            document.getElementById("overlay").style.display = "block";
+            image.style.top = "20%";
+            image.style.left = "20%";
+            image.style.transform = "scale(1.5)";
+            image.style.zIndex = "2";
+            image.style.cursor = "zoom-out";
+            document.body.style.overflowY = "hidden";
+          } else {
+            document.getElementById("overlay").style.display = "none";
+            image.style.transform = "scale(1)";
+            image.style.zIndex = "0";
+            image.style.cursor = "zoom-in";
+            document.body.style.overflowY = "scroll";
+          }
+        });
+      });
+
+      document.getElementById("overlay").addEventListener("click", () => {
+        document.getElementById("overlay").style.display = "none";
+        projectImages.forEach((image) => {
+          image.style.transform = "scale(1)";
+          image.style.zIndex = "0";
+          image.style.cursor = "zoom-in";
+          document.body.style.overflowY = "scroll";
+        });
+      });
+    </script>
+  </body>
+</html>
