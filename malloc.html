@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Malloc</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxygen"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1><a href="index.html">Brady Wales</a></h1>
+      <nav>
+        <ul>
+          <li><a href="mailto:bradywales@gmail.com">email</a></li>
+          <li><a href="https://github.com/bradywales">github</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/brady-wales">linkedin</a>
+          </li>
+          <li><a href="resume.pdf" target="_blank">resume</a></li>
+        </ul>
+      </nav>
+      <hr />
+    </div>
+    <section id="Malloc" class="section">
+      <h2>Malloc</h2>
+      <section class="project-info">
+        <div id="overlay"></div>
+        <div class="project-image">
+          <img
+            width="50%"
+            src="assets/malloc.png"
+            alt="Speech Recognition Archetecture"
+          />
+        </div>
+        <div class="project-details" id="details">
+          <h3>Written in C, > 1000 lines of code.</h3>
+          <h4>
+            <b>Skills:</b>
+            <i>Low-Level C, Heap allocation, Memory Management</i>
+          </h4>
+          <p>
+            Implementation of C's dynamic memory allocation functions, including
+            malloc, free, realloc, and calloc.
+          </p>
+          <ul>
+            <li>
+              <a>malloc</a> (int size):
+              <p style="text-indent: 25px">
+                Allocates a block of memory of a given size, and returns a
+                pointer to the start of the block.
+              </p>
+              <p style="text-indent: 25px">
+                If there is no space left in the heap, requests more memory and
+                extends the internal heap.
+              </p>
+            </li>
+            <li>
+              <a>free</a> (void *ptr):
+              <p style="text-indent: 25px">
+                Frees a block of memory that was previously allocated.
+              </p>
+              <p style="text-indent: 25px">
+                The newly freed block can now be allocated in future malloc
+                calls.
+              </p>
+            </li>
+
+            <li>
+              <a>realloc</a> (void *ptr, int size):
+              <p style="text-indent: 25px">
+                Resizes an allocated block to requested size.
+              </p>
+            </li>
+            <li>
+              <a>calloc</a> (int n, int size):
+              <p style="text-indent: 25px">
+                Allocates an array of size n, with each element being the same
+                size.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Brady Wales</p>
+    </footer>
+    <script>
+      const projectImages = document.querySelectorAll(".project-image img");
+      projectImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          if (image.style.transform != "scale(1.5)") {
+            document.getElementById("overlay").style.display = "block";
+            image.style.top = "20%";
+            image.style.left = "20%";
+            image.style.transform = "scale(1.5)";
+            image.style.zIndex = "2";
+            image.style.cursor = "zoom-out";
+            document.body.style.overflowY = "hidden";
+          } else {
+            document.getElementById("overlay").style.display = "none";
+            image.style.transform = "scale(1)";
+            image.style.zIndex = "0";
+            image.style.cursor = "zoom-in";
+            document.body.style.overflowY = "scroll";
+          }
+        });
+      });
+
+      document.getElementById("overlay").addEventListener("click", () => {
+        document.getElementById("overlay").style.display = "none";
+        projectImages.forEach((image) => {
+          image.style.transform = "scale(1)";
+          image.style.zIndex = "0";
+          image.style.cursor = "zoom-in";
+          document.body.style.overflowY = "scroll";
+        });
+      });
+    </script>
+  </body>
+</html>
