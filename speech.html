@@ -45,15 +45,19 @@
           <ul>
             <li>
               Built using fully connected layers, dropout, and batch
-              normalization.
+              normalization within hidden layer.
             </li>
             <li>
               Audio is converted to machine readable format by transforming the
               data into a spectrogram.
             </li>
             <li>
-              Data on the spectrogram is then read by the model to classify the
-              sound produced at each timestep.
+              Data on the spectrogram is then split into frames of a fixed size,
+              and each timestep in the frame is passed as an input in the input
+              layer.
+            </li>
+            <li>
+              Output from the model is the predicted phoneme for each frame.
             </li>
             <li>
               Experimented with different hyperparameters to achieve the best
