@@ -98,15 +98,15 @@ video {
   max-width: 60%;
   max-height: 60%;
   border-radius: 10px; /* Add rounded corners to the video */
-  box-shadow: 75px 75px 75px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
 }
 
 .project-image img {
   max-width: 60%; /* Ensure the image does not exceed the container width */
   max-height: 60%;
-  border-radius: 10px; /* Add rounded corners to the image */
   transition: transform 0.07s;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+  border-radius: 10px; /* Add rounded corners to the video */
+  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
   z-index: 0;
   position: sticky;
   cursor: zoom-in;

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LSP</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxygen"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1><a href="index.html">Brady Wales</a></h1>
+      <nav>
+        <ul>
+          <li><a href="mailto:bradywales@gmail.com">email</a></li>
+          <li><a href="https://github.com/bradywales">github</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/brady-wales">linkedin</a>
+          </li>
+          <li><a href="resume.pdf" target="_blank">resume</a></li>
+        </ul>
+      </nav>
+      <hr />
+    </div>
+    <section id="Speech Recognition" class="section">
+      <h2>Speech Recognition</h2>
+      <section class="project-info">
+        <div id="overlay"></div>
+        <div class="project-image">
+          <img src="assets/speech.png" alt="Speech Recognition Archetecture" />
+        </div>
+        <div class="project-details" id="details">
+          <h3>Pytorch Machine Learning Model, 86% Validation Accuracy</h3>
+          <h4>
+            <b>Skills:</b>
+            <i>Neural Networks, Audio Processing</i>
+          </h4>
+          <p>
+            Machine Learning Model that recognizes speech audio and converts to
+            text.
+          </p>
+          <ul>
+            <li>
+              Built using fully connected layers, dropout, and batch
+              normalization.
+            </li>
+            <li>
+              Audio is converted to machine readable format by transforming the
+              data into a spectrogram.
+            </li>
+            <li>
+              Data on the spectrogram is then read by the model to classify the
+              sound produced at each timestep.
+            </li>
+            <li>
+              Experimented with different hyperparameters to achieve the best
+              result.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Brady Wales</p>
+    </footer>
+    <script>
+      const projectImages = document.querySelectorAll(".project-image img");
+      projectImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          if (image.style.transform != "scale(1.5)") {
+            document.getElementById("overlay").style.display = "block";
+            image.style.top = "20%";
+            image.style.left = "20%";
+            image.style.transform = "scale(1.5)";
+            image.style.zIndex = "2";
+            image.style.cursor = "zoom-out";
+            document.body.style.overflowY = "hidden";
+          } else {
+            document.getElementById("overlay").style.display = "none";
+            image.style.transform = "scale(1)";
+            image.style.zIndex = "0";
+            image.style.cursor = "zoom-in";
+            document.body.style.overflowY = "scroll";
+          }
+        });
+      });
+
+      document.getElementById("overlay").addEventListener("click", () => {
+        document.getElementById("overlay").style.display = "none";
+        projectImages.forEach((image) => {
+          image.style.transform = "scale(1)";
+          image.style.zIndex = "0";
+          image.style.cursor = "zoom-in";
+          document.body.style.overflowY = "scroll";
+        });
+      });
+    </script>
+  </body>
+</html>
